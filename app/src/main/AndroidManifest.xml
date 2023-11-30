@@ -13,6 +13,9 @@
         android:theme="@style/Theme.InventorizorApp"
         tools:targetApi="31">
         <activity
+            android:name=".addEditIngredientActivity"
+            android:exported="false" />
+        <activity
             android:name=".addeditrecipe"
             android:exported="false" />
         <activity

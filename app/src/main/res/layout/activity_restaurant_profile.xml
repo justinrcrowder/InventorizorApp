@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".addeditrecipe">
+    tools:context=".restaurant_profile">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,23 +14,39 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:background="#FFF0BE"
-        >
+        android:background="#FFF0BE">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/baseline_supervised_user_circle_24"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/add_recipe_button"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="280dp"
+            android:text="Add Recipe"
+            android:textSize="10dp"
+            android:background="@drawable/smallersalmonroundedcorners"/>
 
         <TextView
-            android:id="@+id/enterrecipename"
+            android:id="@+id/restaurant_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter Recipe Name"
+            android:text="Restaurant Name"
             android:textAlignment="center"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="10dp"
             android:textSize="30dp"
             android:paddingLeft="50dp"
             android:paddingRight="50dp"
             android:paddingTop="4dp"
             android:paddingBottom="4dp"
-            android:background="@drawable/smallersalmonroundedcorners"/>
+            android:background="@drawable/smallersalmonroundedcorners" />
     </LinearLayout>
 
     <LinearLayout
@@ -41,54 +57,61 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="275dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
         android:layout_marginBottom="80dp"
         android:background="@drawable/biggersalmonroundedcorners">
 
         <TextView
-            android:id="@+id/addingredients"
+            android:id="@+id/members"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add Ingredients:"
+            android:text="Members:"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="15dp"
-            android:textSize="20dp"/>
+            android:textSize="20dp" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/addingredientbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add Ingredient Name"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="35dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:background="@drawable/grayrounded"/>
-
-        <TextView
-            android:id="@+id/addinstructions"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add Instructions:"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="90dp"
-            android:textSize="20dp"/>
-
-        <EditText
-            android:id="@+id/addintructionsfield"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:hint="Add recipe instructions here..."
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center_horizontal"
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:background="@drawable/grayrounded"
-            android:paddingBottom="200dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="10dp"/>
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/member1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="John Doe" />
+
+                <TextView
+                    android:id="@+id/member2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Bruce Wayne"/>
+
+                <TextView
+                    android:id="@+id/member3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="John Appleseed"/>
+            </LinearLayout>
+        </ScrollView>
+
     </LinearLayout>
 
     <LinearLayout
@@ -102,16 +125,16 @@
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/addeditdonebutton"
+            android:id="@+id/rest_profile_edit_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
-            android:text="Done"
+            android:text="Edit"
             android:background="@drawable/smallersalmonroundedcorners"/>
 
         <!-- Change this button to a back arrow -->
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/addeditbackbutton"
+            android:id="@+id/rest_profile_back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="190dp"

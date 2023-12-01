@@ -136,7 +136,7 @@
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/addeditdonebutton"
+                android:id="@+id/doneButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
@@ -144,7 +144,7 @@
                 android:text="Done" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/addeditbackbutton"
+                android:id="@+id/backButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="190dp"

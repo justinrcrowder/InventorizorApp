@@ -11,4 +11,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+    public void goToAddEditIngredient() {
+
+    }
+
+    public void goToIngredientInfo(String s) {
+
+    }
+
+    //Might not need this function-- depends on how the camera screen is setup
+    public void goToCameraMode() {
+
+    }
+
+    public void goToRestaurantProfile(String s) {
+
+    }
+
 }

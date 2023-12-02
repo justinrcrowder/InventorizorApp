@@ -11,4 +11,8 @@ public class addEditIngredientActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_edit_ingredient);
     }
+
+    public void goToMainActivity() {
+
+    }
 }

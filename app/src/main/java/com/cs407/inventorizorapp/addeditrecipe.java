@@ -11,4 +11,9 @@ public class addeditrecipe extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addeditrecipe);
     }
+
+    public void goToRestaurantProfile(String s) {
+
+    }
+
 }

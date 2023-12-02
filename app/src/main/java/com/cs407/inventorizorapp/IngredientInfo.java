@@ -11,4 +11,18 @@ public class IngredientInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ingredient_info);
     }
+
+    public void goToRecipeInformation() {
+
+    }
+
+    //Might need two activities for Adding and Editing recipes
+    public void goToAddEditRecipe() {
+
+    }
+
+    public void goToMainActivity() {
+
+    }
+
 }

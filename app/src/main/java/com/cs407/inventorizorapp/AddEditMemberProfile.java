@@ -11,4 +11,12 @@ public class AddEditMemberProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_edit_member_profile);
     }
+
+    public void goToRestaurantProfile(String s) {
+
+    }
+
+    public void goToMainActivity() {
+
+    }
 }

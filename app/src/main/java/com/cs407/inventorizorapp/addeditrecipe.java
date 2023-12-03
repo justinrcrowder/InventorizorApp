@@ -2,6 +2,7 @@ package com.cs407.inventorizorapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 public class addeditrecipe extends AppCompatActivity {
@@ -13,7 +14,8 @@ public class addeditrecipe extends AppCompatActivity {
     }
 
     public void goToRestaurantProfile(String s) {
-
+        Intent intent = new Intent(this, restaurant_profile.class);
+        startActivity(intent);
     }
 
 }

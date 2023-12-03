@@ -107,7 +107,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:text="Done"
-            android:background="@drawable/smallersalmonroundedcorners"/>
+            android:background="@drawable/smallersalmonroundedcorners"
+            android:onClick="goToRestaurantProfile"/>
 
         <!-- Change this button to a back arrow -->
         <androidx.appcompat.widget.AppCompatButton

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     public void goToCameraMode() {
 
     }
-
+    // Adding a comment on Line 27 of MainActivity for testing Pushes
     public void goToRestaurantProfile(String s) {
 
     }

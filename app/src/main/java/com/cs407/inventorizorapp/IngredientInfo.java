@@ -13,7 +13,7 @@ public class IngredientInfo extends AppCompatActivity {
         setContentView(R.layout.activity_ingredient_info);
     }
 
-    public void goToRecipeInformation() {
+    public void goToRecipeInfo() {
 
     }
 

@@ -13,7 +13,7 @@
         android:theme="@style/Theme.InventorizorApp"
         tools:targetApi="31">
         <activity
-            android:name=".recipe_information"
+            android:name=".RecipeInfo"
             android:exported="false" />
         <activity
             android:name=".IngredientInfo"

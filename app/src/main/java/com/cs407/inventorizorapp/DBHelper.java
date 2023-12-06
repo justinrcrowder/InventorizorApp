@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 
 public class DBHelper {
+    Cursor c;
     static SQLiteDatabase sqLiteDatabase;
 
     public DBHelper(SQLiteDatabase sqLiteDatabase) {
@@ -41,6 +42,7 @@ public class DBHelper {
         createTable();
         sqLiteDatabase.execSQL("INSERT INTO restaurant (ingredientName, amountOwned, targetAmount) VALUES (?, ?, ?)",
                 new Object[]{ingredient.getIngredientName(), ingredient.getAmountOwned(), ingredient.getTargetAmount()});
+
     }
 
     public void deleteAllIngredients() {

@@ -5,21 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
-public class IngredientInfo extends AppCompatActivity {
+public class recipe_information extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ingredient_info);
+        setContentView(R.layout.activity_recipe_information);
     }
 
-    public void goToRecipeInfo() {
-
-    }
-
-    //Might need two activities for Adding and Editing recipes
-    public void goToAddEditIngredient() {
-        Intent intent = new Intent(this, addEditIngredientActivity.class);
+    public void goToAddEditRecipe() {
+        Intent intent = new Intent(this, addeditrecipe.class);
         startActivity(intent);
     }
 
@@ -27,5 +22,4 @@ public class IngredientInfo extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-
 }

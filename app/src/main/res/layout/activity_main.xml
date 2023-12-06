@@ -26,12 +26,13 @@
             android:textSize="30sp"
             android:textStyle="bold" />
 
-        <ImageView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/profileView"
-            android:layout_width="110dp"
-            android:layout_height="69dp"
+            android:layout_width="100dp"
+            android:layout_height="75dp"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/baseline_person_24" />
+            android:background="@drawable/baseline_person_24"
+            android:onClick="goToRestaurantProfile"/>
     </LinearLayout>
 
     <ListView
@@ -57,7 +58,8 @@
             android:background="@drawable/grayrounded"
             android:paddingHorizontal="10dp"
             android:scaleType="fitXY"
-            app:srcCompat="@android:drawable/ic_menu_add" />
+            app:srcCompat="@android:drawable/ic_menu_add"
+            android:onClick="goToAddEditIngredient"/>
 
         <ImageButton
             android:id="@+id/cameraButton"

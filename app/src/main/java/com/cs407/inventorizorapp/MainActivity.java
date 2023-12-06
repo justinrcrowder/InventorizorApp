@@ -69,8 +69,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
     // Adding a comment on Line 27 of MainActivity for testing Pushes
-    public void goToRestaurantProfile(String s) {
-
+    public void goToRestaurantProfile() {
+        Intent intent = new Intent(this, restaurant_profile.class);
+        startActivity(intent);
     }
 
     @Override

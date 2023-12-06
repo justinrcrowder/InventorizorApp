@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IngredientInfo">
+    tools:context=".recipe_information">
 
     <LinearLayout
-        android:id="@+id/linearLayoutIngredientName"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -19,38 +18,20 @@
         >
 
         <TextView
-            android:id="@+id/ingredientName"
+            android:id="@+id/recipeName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Recipe Name"
+            android:textAlignment="center"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/smallersalmonroundedcorners"
+            android:layout_marginTop="80dp"
+            android:textSize="30dp"
             android:paddingLeft="50dp"
-            android:paddingTop="4dp"
             android:paddingRight="50dp"
-            android:paddingBottom="4dp"
-            android:text="Ingredient"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:textSize="30dp" />
-
-        <TextView
-            android:id="@+id/ingredientThreshold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:paddingLeft="9dp"
             android:paddingTop="4dp"
-            android:paddingRight="50dp"
             android:paddingBottom="4dp"
-            android:text="Low amount threshold:"
-            android:textAlignment="center"
-            android:textSize="18dp"
-            android:background="@drawable/grayrounded"/>
-
+            android:background="@drawable/smallersalmonroundedcorners"/>
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -67,28 +48,65 @@
         android:background="@drawable/biggersalmonroundedcorners">
 
         <TextView
-            android:id="@+id/usedInTextView"
+            android:id="@+id/ingredientsList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Used in:"
-            android:textStyle="bold"
+            android:text="Ingredients:"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="15dp"
             android:textSize="20dp"/>
 
-
-        <TextView
-            android:id="@+id/addinstructions"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Recipes"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:layout_marginHorizontal="50dp"
-            android:textSize="20dp"
-            android:textAlignment="center"
-            android:background="@drawable/grayrounded"/>
+            android:layout_height="75dp">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/ingredientValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="35dp"
+                    android:background="@drawable/grayrounded"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Ingredient 1" />
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/instructions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="90dp"
+                android:text="Instructions:"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/instructionsField"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/grayrounded"
+                android:hint="Add recipe instructions here..."
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="200dp" />
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -103,17 +121,17 @@
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/addeditdonebutton"
+            android:id="@+id/editRecipeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:text="Edit"
             android:background="@drawable/smallersalmonroundedcorners"
-            android:onClick="goToAddEditIngredient"/>
+            android:onClick="goToAddEditRecipe"/>
 
         <!-- Change this button to a back arrow -->
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/addeditbackbutton"
+            android:id="@+id/recipeInfoBackButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="190dp"

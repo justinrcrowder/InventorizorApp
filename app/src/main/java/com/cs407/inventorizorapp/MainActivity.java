@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Context context = getApplicationContext();
         SQLiteDatabase sqLiteDatabase = context.openOrCreateDatabase("restaurant", Context.MODE_PRIVATE, null);
         dbHelper = new DBHelper(sqLiteDatabase);
@@ -45,11 +46,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.i("INFO", "addIngredientButton pressed!");
-                String ingredientName = "Ingredient " + (ingredients.size() + 1);
-                Ingredient newIngredient = new Ingredient(ingredientName, 0, 0);
-                ingredients.add(newIngredient);
-                Log.i("INFO", "New ingredient added: " + newIngredient.getIngredientName());
-                dbHelper.insertIngredient(newIngredient);
+
+//                The code below is for adding an ingredient to the database
+
+//                String ingredientName = "Ingredient " + (ingredients.size() + 1);
+//                Ingredient newIngredient = new Ingredient(ingredientName, 0, 0);
+//                ingredients.add(newIngredient);
+//                Log.i("INFO", "New ingredient added: " + newIngredient.getIngredientName());
+//                dbHelper.insertIngredient(newIngredient);
+
                 goToAddEditIngredient();
             }
         });

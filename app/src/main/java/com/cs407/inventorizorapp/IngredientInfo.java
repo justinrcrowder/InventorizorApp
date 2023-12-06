@@ -2,6 +2,7 @@ package com.cs407.inventorizorapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 public class IngredientInfo extends AppCompatActivity {
@@ -17,12 +18,14 @@ public class IngredientInfo extends AppCompatActivity {
     }
 
     //Might need two activities for Adding and Editing recipes
-    public void goToAddEditRecipe() {
-
+    public void goToAddEditIngredient() {
+        Intent intent = new Intent(this, addEditIngredientActivity.class);
+        startActivity(intent);
     }
 
     public void goToMainActivity() {
-
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
 }

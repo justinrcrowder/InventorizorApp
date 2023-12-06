@@ -31,7 +31,8 @@
             android:layout_marginLeft="280dp"
             android:text="Add Recipe"
             android:textSize="10dp"
-            android:background="@drawable/smallersalmonroundedcorners"/>
+            android:background="@drawable/smallersalmonroundedcorners"
+            android:onClick="goToAddEditRecipe"/>
 
         <TextView
             android:id="@+id/restaurant_name"
@@ -130,7 +131,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:text="Edit"
-            android:background="@drawable/smallersalmonroundedcorners"/>
+            android:background="@drawable/smallersalmonroundedcorners"
+            android:onClick="goToAddEditMemberProfile"/>
 
         <!-- Change this button to a back arrow -->
         <androidx.appcompat.widget.AppCompatButton
@@ -138,6 +140,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="190dp"
-            android:background="@drawable/baseline_arrow_back_24" />
+            android:background="@drawable/baseline_arrow_back_24"
+            android:onClick="goToMainActivity"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

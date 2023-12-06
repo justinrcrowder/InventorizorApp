@@ -2,6 +2,7 @@ package com.cs407.inventorizorapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,7 +14,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goToAddEditIngredient() {
-
+        Intent intent = new Intent(this, addEditIngredientActivity.class);
+        startActivity(intent);
     }
 
     public void goToIngredientInfo(String s) {
@@ -25,8 +27,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
     // Adding a comment on Line 27 of MainActivity for testing Pushes
-    public void goToRestaurantProfile(String s) {
-
+    public void goToRestaurantProfile() {
+        Intent intent = new Intent(this, restaurant_profile.class);
+        startActivity(intent);
     }
 
 }

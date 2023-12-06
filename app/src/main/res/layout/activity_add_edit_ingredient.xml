@@ -184,6 +184,12 @@
             </LinearLayout>
 
         </LinearLayout>
-
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="280dp"
+            android:background="@drawable/baseline_arrow_back_24"
+            android:onClick="goBackToMainActivity"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

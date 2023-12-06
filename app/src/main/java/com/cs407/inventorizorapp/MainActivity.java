@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
@@ -18,9 +19,10 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     public static ArrayList<Ingredient> ingredients;
-    Button addIngredientButton;
     DBHelper dbHelper;
     ArrayAdapter adapter;
+
+    Button addIngredientButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,16 +48,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.i("INFO", "addIngredientButton pressed!");
-
-//                The code below is for adding an ingredient to the database
-
-//                String ingredientName = "Ingredient " + (ingredients.size() + 1);
-//                Ingredient newIngredient = new Ingredient(ingredientName, 0, 0);
-//                ingredients.add(newIngredient);
-//                Log.i("INFO", "New ingredient added: " + newIngredient.getIngredientName());
-//                dbHelper.insertIngredient(newIngredient);
-
                 goToAddEditIngredient();
+            }
+        });
+
+        ingredientsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getApplicationContext(), IngredientInfo.class);
+//                intent.putExtra("ingredientId", i);
+                startActivity(intent);
             }
         });
     }

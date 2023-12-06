@@ -113,7 +113,7 @@
 
         <!-- Change this button to a back arrow -->
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/addeditbackbutton"
+            android:id="@+id/backButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="190dp"

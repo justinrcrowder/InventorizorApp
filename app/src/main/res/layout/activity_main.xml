@@ -48,18 +48,19 @@
         android:background="#FFBEBE"
         android:orientation="horizontal">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/addIngredientButton"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="64dp"
             android:layout_gravity="center"
             android:layout_marginHorizontal="10dp"
+            android:layout_weight="1"
             android:background="@drawable/grayrounded"
+            android:text="Add Ingredient"
+            android:onClick="goToAddEditIngredient"
             android:paddingHorizontal="10dp"
             android:scaleType="fitXY"
-            app:srcCompat="@android:drawable/ic_menu_add"
-            android:onClick="goToAddEditIngredient"/>
+            app:srcCompat="@android:drawable/ic_menu_add" />
 
         <ImageButton
             android:id="@+id/cameraButton"

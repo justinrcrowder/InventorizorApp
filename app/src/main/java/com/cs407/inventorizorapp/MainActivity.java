@@ -66,9 +66,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Might not need this function-- depends on how the camera screen is setup
-    public void goToCameraMode() {
-
-    }
+//    public void goToCameraMode() {
+//
+//    }
 
     // Adding a comment on Line 27 of MainActivity for testing Pushes
     public void goToRestaurantProfile(View view) {

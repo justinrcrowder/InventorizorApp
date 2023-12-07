@@ -15,7 +15,7 @@ public class restaurant_profile extends AppCompatActivity {
     }
 
     //Might end up needing two activities for Adding a recipe and Editing a recipe
-    public void goToAddEditRecipe() {
+    public void goToAddEditRecipe(View view) {
         Intent intent = new Intent(this, addeditrecipe.class);
         startActivity(intent);
     }
@@ -25,7 +25,7 @@ public class restaurant_profile extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goToAddEditMemberProfile() {
+    public void goToAddEditMemberProfile(View view) {
         Intent intent = new Intent(this, AddEditMemberProfile.class);
         startActivity(intent);
     }

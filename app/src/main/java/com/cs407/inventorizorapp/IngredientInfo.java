@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class IngredientInfo extends AppCompatActivity {
     Button backButton;
@@ -23,6 +26,12 @@ public class IngredientInfo extends AppCompatActivity {
         int targetAmount = intent.getIntExtra("targetAmount", 0);
 
         Log.i("INFO", ingredientName + " " + amountOwned + " " + targetAmount);
+
+        // show ingredient information from intent
+        TextView ingredientNameTextView = findViewById(R.id.ingredientName);
+        TextView ingredientThresholdTextView = findViewById(R.id.ingredientThreshold);
+        ingredientNameTextView.setText(ingredientName);
+        ingredientThresholdTextView.setText("Low amount threshold: " + targetAmount);
 
         backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(view -> goToMainActivity());

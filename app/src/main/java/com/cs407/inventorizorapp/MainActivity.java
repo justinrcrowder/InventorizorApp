@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -63,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // Adding a comment on Line 27 of MainActivity for testing Pushes
-    public void goToRestaurantProfile() {
+    public void goToRestaurantProfile(View view) {
         Intent intent = new Intent(this, restaurant_profile.class);
         startActivity(intent);
     }

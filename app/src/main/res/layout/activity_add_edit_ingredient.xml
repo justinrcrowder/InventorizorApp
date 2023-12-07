@@ -80,7 +80,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/enterAmountOwnedTextView"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -91,7 +91,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/itemQuantity"
+                android:id="@+id/amountOwnedText"
                 android:layout_width="15dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -103,7 +103,7 @@
                 android:textColor="#F3EBEB" />
 
             <LinearLayout
-                android:id="@+id/incrementDecrementContainer"
+                android:id="@+id/incrementDecrementContainer1"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="10dp"
@@ -112,14 +112,14 @@
                 android:paddingVertical="20dp">
 
                 <ImageButton
-                    android:id="@+id/itemIncrementButton1"
+                    android:id="@+id/incrAmountOwned"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:src="@android:drawable/arrow_up_float" />
 
                 <ImageButton
-                    android:id="@+id/itemDecrementButton1"
+                    android:id="@+id/decrAmountOwned"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -137,7 +137,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/enterTargetAmountTextView"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -148,7 +148,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/itemQuantity"
+                android:id="@+id/targetAmountText"
                 android:layout_width="15dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -160,7 +160,7 @@
                 android:textColor="#F3EBEB" />
 
             <LinearLayout
-                android:id="@+id/incrementDecrementContainer"
+                android:id="@+id/incrementDecrementContainer2"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="10dp"
@@ -169,14 +169,14 @@
                 android:paddingVertical="20dp">
 
                 <ImageButton
-                    android:id="@+id/itemIncrementButton1"
+                    android:id="@+id/incrTargetAmount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:src="@android:drawable/arrow_up_float" />
 
                 <ImageButton
-                    android:id="@+id/itemDecrementButton1"
+                    android:id="@+id/decrTargetAmount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -185,11 +185,13 @@
 
         </LinearLayout>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/saveIngredientButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/smallersalmonroundedcorners"
+            android:text="Confirm" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

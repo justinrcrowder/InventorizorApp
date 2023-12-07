@@ -16,6 +16,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="#FFF0BE">
 
+        <!-- Restaurant Icon -->
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="150dp"
@@ -24,6 +25,7 @@
             android:layout_marginTop="30dp"
             android:src="@drawable/baseline_supervised_user_circle_24"/>
 
+        <!-- Add Recipe Button -->
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/add_recipe_button"
             android:layout_width="100dp"
@@ -34,6 +36,7 @@
             android:background="@drawable/smallersalmonroundedcorners"
             android:onClick="goToAddEditRecipe"/>
 
+        <!-- Restaurant Name (change to not hardcoded) -->
         <TextView
             android:id="@+id/restaurant_name"
             android:layout_width="wrap_content"
@@ -64,6 +67,7 @@
         android:layout_marginBottom="80dp"
         android:background="@drawable/biggersalmonroundedcorners">
 
+        <!-- Members -->
         <TextView
             android:id="@+id/members"
             android:layout_width="wrap_content"
@@ -73,6 +77,7 @@
             android:layout_marginTop="15dp"
             android:textSize="20dp" />
 
+        <!-- List of members -->
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -87,6 +92,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
+                <!-- Change to not be hardcoded -->
                 <TextView
                     android:id="@+id/member1"
                     android:layout_width="match_parent"
@@ -117,14 +123,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        android:layout_marginTop="775dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="785dp"
         android:orientation="horizontal">
 
+        <!-- Edit Button -->
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/rest_profile_edit_button"
             android:layout_width="wrap_content"
@@ -134,7 +141,7 @@
             android:background="@drawable/smallersalmonroundedcorners"
             android:onClick="goToAddEditMemberProfile"/>
 
-        <!-- Change this button to a back arrow -->
+        <!-- Back Arrow -->
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/rest_profile_back_button"
             android:layout_width="wrap_content"

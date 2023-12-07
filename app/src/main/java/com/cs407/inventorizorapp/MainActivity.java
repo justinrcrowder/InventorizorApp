@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+
+import org.json.JSONStringer;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,8 +46,9 @@ public class MainActivity extends AppCompatActivity {
             goToAddEditIngredient();
         });
 
-        ingredientsListView.setOnItemClickListener((adapterView, view, i, l) -> {
-            goToIngredientInfo();
+        ingredientsListView.setOnItemClickListener((adapterView, view, ingredientIndex, l) -> {
+            Ingredient selectedIngredient = ingredients.get(ingredientIndex);
+            goToIngredientInfo(selectedIngredient);
         });
     }
 
@@ -53,8 +57,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goToIngredientInfo() {
+    public void goToIngredientInfo(Ingredient selectedIngredient) {
         Intent intent = new Intent(getApplicationContext(), IngredientInfo.class);
+        intent.putExtra("ingredientName", selectedIngredient.getIngredientName());
+        intent.putExtra("amountOwned", selectedIngredient.getAmountOwned());
+        intent.putExtra("targetAmount", selectedIngredient.getTargetAmount());
         startActivity(intent);
     }
 

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -15,13 +16,16 @@ public class IngredientInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ingredient_info);
 
+        // receive information about selected ingredient through intent for display
+        Intent intent = getIntent();
+        String ingredientName = intent.getStringExtra("ingredientName");
+        int amountOwned = intent.getIntExtra("amountOwned", 0);
+        int targetAmount = intent.getIntExtra("targetAmount", 0);
+
+        Log.i("INFO", ingredientName + " " + amountOwned + " " + targetAmount);
+
         backButton = findViewById(R.id.backButton);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                goToMainActivity();
-            }
-        });
+        backButton.setOnClickListener(view -> goToMainActivity());
     }
 
     public void goToRecipeInfo() {

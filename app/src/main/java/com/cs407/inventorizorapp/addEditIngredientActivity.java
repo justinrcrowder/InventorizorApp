@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -17,6 +19,10 @@ public class addEditIngredientActivity extends AppCompatActivity {
     Button saveIngredientButton;
     public static ArrayList<Ingredient> ingredients;
     DBHelper dbHelper;
+    int currAmountOwned = 0;
+    int currTargetAmount = 0;
+    private TextView amountOwnedText;
+    private TextView targetAmountText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +47,38 @@ public class addEditIngredientActivity extends AppCompatActivity {
                 goToMainActivity();
             }
         });
+
+        // Code for incrementing and decrementing values
+        amountOwnedText = findViewById(R.id.amountOwned);
+        targetAmountText = findViewById(R.id.targetAmount);
+
+        ImageButton incrAmountOwnedButton = findViewById(R.id.itemIncrementButton1);
+        incrAmountOwnedButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                currAmountOwned++;
+                amountOwnedText.setText(String.valueOf(currAmountOwned));
+            }
+        });
     }
 
     public void goToMainActivity() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+
+    public void decrAmountOwned() {
+        currAmountOwned--;
+        amountOwnedText.setText(String.valueOf(currAmountOwned));
+    }
+
+    public void incrTargetAmount() {
+        currTargetAmount++;
+        targetAmountText.setText(String.valueOf(currTargetAmount));
+    }
+
+    public void decrTargetAmount() {
+        currTargetAmount--;
+        targetAmountText.setText(String.valueOf(currTargetAmount));
     }
 }

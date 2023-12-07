@@ -80,7 +80,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/textViewAmountOwned"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -91,19 +91,19 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/itemQuantity"
+                android:id="@+id/amountOwned"
                 android:layout_width="15dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:background="@drawable/darkergrayrounded"
                 android:paddingVertical="10dp"
-                android:text="5"
+                android:text="0"
                 android:textAlignment="center"
                 android:textColor="#F3EBEB" />
 
             <LinearLayout
-                android:id="@+id/incrementDecrementContainer"
+                android:id="@+id/incrementDecrementContainer1"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="10dp"
@@ -116,14 +116,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:src="@android:drawable/arrow_up_float" />
+                    android:src="@android:drawable/arrow_up_float"
+                    android:onClick="incrAmountOwned"/>
 
                 <ImageButton
                     android:id="@+id/itemDecrementButton1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:src="@android:drawable/arrow_down_float" />
+                    android:src="@android:drawable/arrow_down_float"
+                    android:onClick="decrAmountOwned"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -137,7 +139,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/textViewTargetAmount"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -148,19 +150,19 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/itemQuantity"
+                android:id="@+id/targetAmount"
                 android:layout_width="15dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:background="@drawable/darkergrayrounded"
                 android:paddingVertical="10dp"
-                android:text="5"
+                android:text="0"
                 android:textAlignment="center"
                 android:textColor="#F3EBEB" />
 
             <LinearLayout
-                android:id="@+id/incrementDecrementContainer"
+                android:id="@+id/incrementDecrementContainer2"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="10dp"
@@ -169,27 +171,31 @@
                 android:paddingVertical="20dp">
 
                 <ImageButton
-                    android:id="@+id/itemIncrementButton1"
+                    android:id="@+id/itemIncrementButton2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:src="@android:drawable/arrow_up_float" />
+                    android:src="@android:drawable/arrow_up_float"
+                    android:onClick="incrTargetAmount"/>
 
                 <ImageButton
-                    android:id="@+id/itemDecrementButton1"
+                    android:id="@+id/itemDecrementButton2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:src="@android:drawable/arrow_down_float" />
+                    android:src="@android:drawable/arrow_down_float"
+                    android:onClick="decrTargetAmount"/>
             </LinearLayout>
 
         </LinearLayout>
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/saveIngredientButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="Confirm"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/smallersalmonroundedcorners"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

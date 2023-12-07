@@ -67,10 +67,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goToIngredientInfo(String s) {
-
-    }
-
     //Might not need this function-- depends on how the camera screen is setup
     public void goToCameraMode() {
 

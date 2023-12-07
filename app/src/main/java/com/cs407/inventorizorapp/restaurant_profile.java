@@ -29,4 +29,9 @@ public class restaurant_profile extends AppCompatActivity {
         Intent intent = new Intent(this, AddEditMemberProfile.class);
         startActivity(intent);
     }
+
+    public void goToRecipeList(View view) {
+        Intent intent = new Intent(this, Recipes.class);
+        startActivity(intent);
+    }
 }

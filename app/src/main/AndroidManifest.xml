@@ -13,9 +13,11 @@
         android:theme="@style/Theme.InventorizorApp"
         tools:targetApi="31">
         <activity
+            android:name=".Recipes"
+            android:exported="false" />
+        <activity
             android:name=".DBTesting"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".IngredientInfo"
             android:exported="false" />

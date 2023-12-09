@@ -39,7 +39,16 @@
         android:id="@+id/ingredientListView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1" >
+    </ListView>
+
+    <TextView
+        android:id="@+id/emptyMessage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:text="Press the + button to add an ingredient!" />
 
     <LinearLayout
         android:id="@+id/BottomOfMainScreen"

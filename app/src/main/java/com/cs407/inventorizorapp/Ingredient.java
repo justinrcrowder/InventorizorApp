@@ -1,6 +1,10 @@
 package com.cs407.inventorizorapp;
 
-public class Ingredient {
+import androidx.annotation.NonNull;
+
+import java.io.Serializable;
+
+public class Ingredient implements Serializable {
     private String ingredientName;
     private int amountOwned;
     private int targetAmount;

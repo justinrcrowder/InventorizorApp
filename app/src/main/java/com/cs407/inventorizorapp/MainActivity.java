@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             findViewById(R.id.emptyMessage).setVisibility(View.GONE);
             displayIngredients = new ArrayList<>();
             for (Ingredient ingredient : ingredients) {
-                displayIngredients.add(String.format("Name:%s\nAmount Owned:%s\tOwned:%s", ingredient.getIngredientName(), ingredient.getAmountOwned(), ingredient.getTargetAmount()));
+                displayIngredients.add(String.format("Name: %s\nAmount Owned: %s    Target Amount: %s", ingredient.getIngredientName(), ingredient.getAmountOwned(), ingredient.getTargetAmount()));
             }
 
             // load displayIngredients into listview for display

@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -93,21 +94,36 @@ public class addEditIngredientActivity extends AppCompatActivity {
         saveIngredientButton = findViewById(R.id.saveIngredientButton);
         saveIngredientButton.setOnClickListener(view -> {
             Log.i("INFO", "Save button pressed");
+
+            ingredientName = ingredientNameEditText.getText().toString().trim();
+
+            if (ingredientName.isEmpty()) {
+                showToast("Ingredient name cannot be blank");
+                return;
+            }
+
+            if (targetAmount <= 0 || amountOwned <= 0) {
+                showToast("Quantities must be greater than zero");
+                return;
+            }
+
+            Ingredient newIngredient = new Ingredient(ingredientName, targetAmount, amountOwned);
+
             if (ingredients != null) {
-                ingredientName = ingredientNameEditText.getText().toString();
-                Ingredient newIngredient = new Ingredient(ingredientName, targetAmount, amountOwned);
                 ingredients.add(newIngredient);
                 Log.i("INFO", "New ingredient added: " + newIngredient.getIngredientName());
-//                dbHelper.insertIngredient(newIngredient);
             } else {
                 ingredients = new ArrayList<>();
-                ingredientName = ingredientNameEditText.getText().toString();
-                Ingredient newIngredient = new Ingredient(ingredientName, targetAmount, amountOwned);
                 ingredients.add(newIngredient);
                 Log.i("INFO", "New ingredient added: " + newIngredient.getIngredientName());
             }
+
             goToMainActivity();
         });
+    }
+
+    private void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     public void goToMainActivity() {

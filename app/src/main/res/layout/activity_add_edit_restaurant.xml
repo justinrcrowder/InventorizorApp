@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#FFF0BE"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="15dp"
+            android:background="@drawable/grayrounded"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nameRestaurant"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Enter restaurant name:"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="15dp"
+            android:background="@drawable/grayrounded"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/memberName"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:hint="Enter member name:"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/memberPosition"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:hint="Enter member position"
+                        android:textSize="20sp"
+                        tools:textStyle="bold" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/memberNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:hint="Enter member phone number"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/addRestaurantButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/smallersalmonroundedcorners"
+            android:text="Confirm" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

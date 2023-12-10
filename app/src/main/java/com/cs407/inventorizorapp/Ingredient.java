@@ -1,7 +1,5 @@
 package com.cs407.inventorizorapp;
 
-import androidx.annotation.NonNull;
-
 import java.io.Serializable;
 
 public class Ingredient implements Serializable {
@@ -13,6 +11,18 @@ public class Ingredient implements Serializable {
     public Ingredient(String ingredientName, int amountOwned, int targetAmount) {
         this.ingredientName = ingredientName;
         this.amountOwned = amountOwned;
+        this.targetAmount = targetAmount;
+    }
+
+    public void setIngredientName(String ingredientName) {
+        this.ingredientName = ingredientName;
+    }
+
+    public void setAmountOwned(int amountOwned) {
+        this.amountOwned = amountOwned;
+    }
+
+    public void setTargetAmount(int targetAmount) {
         this.targetAmount = targetAmount;
     }
 

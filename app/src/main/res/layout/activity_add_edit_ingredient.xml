@@ -64,6 +64,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
+                    android:id="@+id/ingredientNameEditText"
                     android:layout_height="match_parent"
                     android:hint="Enter ingredient name:"
                     android:textSize="20sp"

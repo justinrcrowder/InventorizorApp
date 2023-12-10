@@ -10,6 +10,11 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.textfield.TextInputEditText;
 
 import org.json.JSONStringer;
 
@@ -17,6 +22,9 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     public static ArrayList<Ingredient> ingredients;
+    private String ingredientName;
+    private int amountOwned;
+    private int targetAmount;
     public static ArrayList<String> displayIngredients;
     DBHelper dbHelper;
     ArrayAdapter adapter;
@@ -46,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             findViewById(R.id.emptyMessage).setVisibility(View.GONE);
             displayIngredients = new ArrayList<>();
             for (Ingredient ingredient : ingredients) {
-                displayIngredients.add(String.format("Name: %s\nAmount Owned: %s    Target Amount: %s", ingredient.getIngredientName(), ingredient.getAmountOwned(), ingredient.getTargetAmount()));
+                displayIngredients.add(String.format("Name:%s\nAmount Owned:%s\tOwned:%s", ingredient.getIngredientName(), ingredient.getAmountOwned(), ingredient.getTargetAmount()));
             }
 
             // load displayIngredients into listview for display

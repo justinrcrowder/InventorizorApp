@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/grayrounded"
     android:orientation="vertical"
-    android:background="@drawable/darkergrayrounded"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -18,9 +18,9 @@
         <TextView
             android:id="@+id/LogoView"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_weight="1"
             android:gravity="center"
             android:text="Inventorizor"
             android:textSize="30sp"
@@ -32,22 +32,21 @@
             android:layout_height="75dp"
             android:layout_gravity="center"
             android:background="@drawable/baseline_person_24"
-            android:onClick="goToRestaurantProfile"/>
+            android:onClick="goToRestaurantProfile" />
     </LinearLayout>
 
     <ListView
         android:id="@+id/ingredientListView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" >
-    </ListView>
+        android:layout_weight="1"></ListView>
 
     <TextView
         android:id="@+id/emptyMessage"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:gravity="center"
         android:layout_weight="1"
+        android:gravity="center"
         android:text="Press the + button to add an ingredient!" />
 
     <LinearLayout
@@ -65,19 +64,19 @@
             android:layout_marginHorizontal="10dp"
             android:layout_weight="1"
             android:background="@drawable/grayrounded"
-            android:text="Add Ingredient"
             android:onClick="goToAddEditIngredient"
             android:paddingHorizontal="10dp"
             android:scaleType="fitXY"
+            android:text="Add Ingredient"
             app:srcCompat="@android:drawable/ic_menu_add" />
 
         <ImageButton
             android:id="@+id/cameraButton"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="70dp"
             android:layout_gravity="center"
             android:layout_marginHorizontal="10dp"
+            android:layout_weight="1"
             android:background="@drawable/grayrounded"
             android:paddingHorizontal="10dp"
             android:scaleType="fitXY"
@@ -85,8 +84,8 @@
 
         <Space
             android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
     </LinearLayout>
 
 </LinearLayout>

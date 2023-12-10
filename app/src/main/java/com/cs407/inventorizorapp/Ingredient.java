@@ -14,18 +14,6 @@ public class Ingredient implements Serializable {
         this.targetAmount = targetAmount;
     }
 
-    public void setIngredientName(String ingredientName) {
-        this.ingredientName = ingredientName;
-    }
-
-    public void setAmountOwned(int amountOwned) {
-        this.amountOwned = amountOwned;
-    }
-
-    public void setTargetAmount(int targetAmount) {
-        this.targetAmount = targetAmount;
-    }
-
     public String getIngredientName() {
         return ingredientName;
     }

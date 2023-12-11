@@ -15,7 +15,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     public static ArrayList<Ingredient> ingredients;
     public static ArrayList<String> displayIngredients;
-    DBHelper dbHelper;
     ArrayAdapter adapter;
     Button addIngredientButton;
 
@@ -24,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Use RestaurantManager to get ingredients
+        RestaurantManager restaurantManager = RestaurantManager.getInstance();
+        ingredients = restaurantManager.getIngredients();
+
 //        uncomment if switching back to database
 //        load ingredients from the database and prepare them as strings
 //        Context context = getApplicationContext();
@@ -31,19 +34,11 @@ public class MainActivity extends AppCompatActivity {
 //        dbHelper = new DBHelper(sqLiteDatabase);
 //        ingredients = dbHelper.readIngredients();
 
-        // fill ingredients from intent
-        if (getIntent() != null) {
-                Log.i("INFO", "Ingredients received!");
-                ingredients = (ArrayList<Ingredient>) getIntent().getSerializableExtra("Ingredient_list");
-        } else {
-            ingredients = new ArrayList<>();
-        }
-
         if (ingredients != null && ingredients.size() > 0) {
             findViewById(R.id.emptyMessage).setVisibility(View.GONE);
             displayIngredients = new ArrayList<>();
             for (Ingredient ingredient : ingredients) {
-                displayIngredients.add(String.format("Name:%s\nAmount Owned:%s\tOwned:%s", ingredient.getIngredientName(), ingredient.getAmountOwned(), ingredient.getTargetAmount()));
+                displayIngredients.add(String.format("Name: %s\nAmount Owned: %s    Target Amount: %s", ingredient.getIngredientName(), ingredient.getAmountOwned(), ingredient.getTargetAmount()));
             }
 
             // load displayIngredients into listview for display
@@ -53,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
             ingredientsListView.setOnItemClickListener((adapterView, view, ingredientIndex, l) -> {
                 Ingredient selectedIngredient = ingredients.get(ingredientIndex);
-                goToIngredientInfo(selectedIngredient);
+                goToIngredientInfo(selectedIngredient, ingredientIndex);
             });
         } else {
             findViewById(R.id.ingredientListView).setVisibility(View.GONE);
@@ -62,40 +57,26 @@ public class MainActivity extends AppCompatActivity {
 
         addIngredientButton = findViewById(R.id.addIngredientButton);
         addIngredientButton.setOnClickListener(view -> {
-            goToAddEditIngredient();
+            goToAddIngredient();
         });
     }
 
-    public void goToAddEditIngredient() {
-        Intent intent = new Intent(this, addEditIngredientActivity.class);
-        intent.putExtra("Ingredient_list", ingredients);
+    public void goToAddIngredient() {
+        Intent intent = new Intent(this, addIngredientActivity.class);
         startActivity(intent);
     }
 
-    public void goToIngredientInfo(Ingredient selectedIngredient) {
+    public void goToIngredientInfo(Ingredient selectedIngredient, int index) {
         Intent intent = new Intent(getApplicationContext(), IngredientInfo.class);
-        intent.putExtra("ingredientName", selectedIngredient.getIngredientName());
-        intent.putExtra("amountOwned", selectedIngredient.getAmountOwned());
-        intent.putExtra("targetAmount", selectedIngredient.getTargetAmount());
-        intent.putExtra("Ingredient_list", ingredients);
+        intent.putExtra("SelectedIngredient", selectedIngredient);
+        intent.putExtra("IngredientIndex", index);
+        Log.i("INFO", index + " " + selectedIngredient.getIngredientName());
         startActivity(intent);
     }
 
-    //Might not need this function-- depends on how the camera screen is setup
-//    public void goToCameraMode() {
-//
-//    }
-
-    // Adding a comment on Line 27 of MainActivity for testing Pushes
     public void goToRestaurantProfile(View view) {
         Intent intent = new Intent(this, restaurant_profile.class);
         startActivity(intent);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        dbHelper.closeDatabase();
     }
 
 }

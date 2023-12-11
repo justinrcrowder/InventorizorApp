@@ -11,21 +11,31 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 public class IngredientInfo extends AppCompatActivity {
-    Button backButton;
-    public ArrayList<Ingredient> ingredients;
+    private int ingredientIndex;
+    private Button backButton;
+    private Button editButton;
+    private ArrayList<Ingredient> ingredients;
+
+    // Use the RestaurantManager to manage ingredients
+    private RestaurantManager restaurantManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ingredient_info);
 
-        ingredients = (ArrayList<Ingredient>) getIntent().getSerializableExtra("Ingredient_list");
+        // Initialize the RestaurantManager instance
+        restaurantManager = RestaurantManager.getInstance();
 
-        // receive information about selected ingredient through intent for display
-        Intent intent = getIntent();
-        String ingredientName = intent.getStringExtra("ingredientName");
-        int amountOwned = intent.getIntExtra("amountOwned", 0);
-        int targetAmount = intent.getIntExtra("targetAmount", 0);
+        // Get ingredients and selectedIngredient from RestaurantManager
+        ingredients = restaurantManager.getIngredients();
+        Ingredient selectedIngredient = (Ingredient) getIntent().getSerializableExtra("SelectedIngredient");
+        ingredientIndex = getIntent().getIntExtra("IngredientIndex", -1);
+        Log.i("INFO", "got index: " + ingredientIndex);
+
+        String ingredientName = selectedIngredient.getIngredientName();
+        int amountOwned = selectedIngredient.getAmountOwned();
+        int targetAmount = selectedIngredient.getTargetAmount();
 
         Log.i("INFO", ingredientName + " " + amountOwned + " " + targetAmount);
 
@@ -35,25 +45,22 @@ public class IngredientInfo extends AppCompatActivity {
         ingredientNameTextView.setText(ingredientName);
         ingredientThresholdTextView.setText("Low amount threshold: " + targetAmount);
 
+        editButton = findViewById(R.id.editButton);
+        editButton.setOnClickListener(view -> goToEditIngredient(ingredients, selectedIngredient));
+
         backButton = findViewById(R.id.backButton);
-        backButton.setOnClickListener(view -> goToMainActivity());
+        backButton.setOnClickListener(view -> goToMainActivity(ingredients));
     }
 
-    public void goToRecipeInfo() {
-
-    }
-
-    //Might need two activities for Adding and Editing recipes
-    public void goToAddEditIngredient() {
-        Intent intent = new Intent(this, addEditIngredientActivity.class);
-        intent.putExtra("Ingredient_list", ingredients);
+    private void goToEditIngredient(ArrayList<Ingredient> ingredients, Ingredient selectedIngredient) {
+        Intent intent = new Intent(getApplicationContext(), editIngredientActivity.class);
+        intent.putExtra("IngredientIndex", ingredientIndex);
+        intent.putExtra("SelectedIngredient", selectedIngredient);
         startActivity(intent);
     }
 
-    public void goToMainActivity() {
+    private void goToMainActivity(ArrayList<Ingredient> ingredients) {
         Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("Ingredient_list", ingredients);
         startActivity(intent);
     }
-
 }

@@ -19,7 +19,7 @@ public class recipesListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recipes);
+        setContentView(R.layout.activity_recipe_list);
 
         // Use restaurant manager to get current list of recipes
         RestaurantManager restaurantManager = RestaurantManager.getInstance();

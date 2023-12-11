@@ -29,7 +29,7 @@ public class addIngredientActivity extends AppCompatActivity {
     private ArrayList<Ingredient> ingredients;
 
     // Use the RestaurantManager to manage ingredients
-    private RestaurantManager restaurantManager;
+    private com.cs407.inventorizorapp.restaurantManager restaurantManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,7 @@ public class addIngredientActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_ingredient);
 
         // Initialize the RestaurantManager instance
-        restaurantManager = RestaurantManager.getInstance();
+        restaurantManager = com.cs407.inventorizorapp.restaurantManager.getInstance();
 
         // Get ingredients from RestaurantManager
         ingredients = restaurantManager.getIngredients();

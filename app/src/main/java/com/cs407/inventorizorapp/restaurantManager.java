@@ -2,18 +2,20 @@ package com.cs407.inventorizorapp;
 
 import java.util.ArrayList;
 
-public class RestaurantManager {
-    private static RestaurantManager instance;
+public class restaurantManager {
+    private static restaurantManager instance;
     private ArrayList<Ingredient> ingredients;
+    private ArrayList<Recipe> recipes;
 
-    private RestaurantManager() {
+    private restaurantManager() {
         // Private constructor to prevent instantiation
         ingredients = new ArrayList<>();
+        recipes = new ArrayList<>();
     }
 
-    public static synchronized RestaurantManager getInstance() {
+    public static synchronized restaurantManager getInstance() {
         if (instance == null) {
-            instance = new RestaurantManager();
+            instance = new restaurantManager();
         }
         return instance;
     }
@@ -24,5 +26,10 @@ public class RestaurantManager {
 
     public void setIngredients(ArrayList<Ingredient> ingredients) {
         this.ingredients = ingredients;
+    }
+
+    public ArrayList<Recipe> getRecipes() { return recipes; }
+    public void addRecipe(Recipe recipe) {
+        recipes.add(recipe);
     }
 }

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Use RestaurantManager to get ingredients
-        RestaurantManager restaurantManager = RestaurantManager.getInstance();
+        restaurantManager restaurantManager = com.cs407.inventorizorapp.restaurantManager.getInstance();
         ingredients = restaurantManager.getIngredients();
 
 //        uncomment if switching back to database

@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
-public class recipe_information extends AppCompatActivity {
+public class recipeInfoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,7 +14,7 @@ public class recipe_information extends AppCompatActivity {
     }
 
     public void goToAddEditRecipe() {
-        Intent intent = new Intent(this, addeditrecipe.class);
+        Intent intent = new Intent(this, addRecipeActivity.class);
         startActivity(intent);
     }
 

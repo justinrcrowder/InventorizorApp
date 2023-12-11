@@ -16,7 +16,7 @@
             android:name=".editIngredientActivity"
             android:exported="false" />
         <activity
-            android:name=".Recipes"
+            android:name=".recipesListActivity"
             android:exported="false" />
         <activity
             android:name=".DBTesting"
@@ -34,7 +34,7 @@
             android:name=".addIngredientActivity"
             android:exported="false" />
         <activity
-            android:name=".addeditrecipe"
+            android:name=".addRecipeActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

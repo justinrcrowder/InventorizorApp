@@ -17,7 +17,7 @@ public class IngredientInfo extends AppCompatActivity {
     private ArrayList<Ingredient> ingredients;
 
     // Use the RestaurantManager to manage ingredients
-    private RestaurantManager restaurantManager;
+    private com.cs407.inventorizorapp.restaurantManager restaurantManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,7 @@ public class IngredientInfo extends AppCompatActivity {
         setContentView(R.layout.activity_ingredient_info);
 
         // Initialize the RestaurantManager instance
-        restaurantManager = RestaurantManager.getInstance();
+        restaurantManager = com.cs407.inventorizorapp.restaurantManager.getInstance();
 
         // Get ingredients and selectedIngredient from RestaurantManager
         ingredients = restaurantManager.getIngredients();

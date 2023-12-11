@@ -22,4 +22,9 @@ public class MemberProfile {
     public String getMemberPhone() {
         return memberPhone;
     }
+
+    @Override
+    public String toString() {
+        return "Name: " + memberName + "\nPosition: " + memberPosition;
+    }
 }

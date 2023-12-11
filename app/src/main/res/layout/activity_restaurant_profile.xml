@@ -84,29 +84,17 @@
                 android:orientation="vertical">
 
                 <!-- Change to not be hardcoded -->
-                <TextView
-                    android:id="@+id/member1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:text="John Doe" />
 
-                <TextView
-                    android:id="@+id/member2"
+                <!-- List of members -->
+                <ListView
+                    android:id="@+id/membersListView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:text="Bruce Wayne"/>
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="10dp"></ListView>
 
-                <TextView
-                    android:id="@+id/member3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:text="John Appleseed"/>
+
             </LinearLayout>
         </ScrollView>
 

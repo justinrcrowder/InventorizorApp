@@ -15,7 +15,7 @@ public class Recipes extends AppCompatActivity {
     }
 
     public void goToAddRecipe(View view) {
-        Intent intent = new Intent(this, addeditrecipe.class);
+        Intent intent = new Intent(this, addRecipe.class);
         startActivity(intent);
     }
 }

@@ -11,6 +11,7 @@ public class RestaurantManager {
     private RestaurantManager() {
         // Private constructor to prevent instantiation
         ingredients = new ArrayList<>();
+        recipes = new ArrayList<>();
     }
 
     public static synchronized RestaurantManager getInstance() {

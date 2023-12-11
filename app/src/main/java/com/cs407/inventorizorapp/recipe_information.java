@@ -14,7 +14,7 @@ public class recipe_information extends AppCompatActivity {
     }
 
     public void goToAddEditRecipe() {
-        Intent intent = new Intent(this, addeditrecipe.class);
+        Intent intent = new Intent(this, addRecipe.class);
         startActivity(intent);
     }
 

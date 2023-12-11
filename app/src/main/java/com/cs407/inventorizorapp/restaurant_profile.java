@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -15,6 +16,7 @@ public class restaurant_profile extends AppCompatActivity {
 
     private TextView restaurantNameTextView;
     private ArrayList<MemberProfile> members;
+    private ArrayList<String> displayMembers;
     private ListView membersList;
     private ArrayAdapter adapter;
 
@@ -29,13 +31,13 @@ public class restaurant_profile extends AppCompatActivity {
         restaurantNameTextView = findViewById(R.id.restaurantName);
         restaurantNameTextView.setText(restaurantManager.getRestaurantName());
 
-        ArrayList<String> displayMembers = new ArrayList<>();
-        membersList = findViewById(R.id.membersListView);
+        displayMembers = new ArrayList<>();
         for (MemberProfile member : members) {
             displayMembers.add(String.format("%s\n%s", member.getMemberName(), member.getMemberPosition()));
         }
 
         adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, displayMembers);
+        ListView membersList = findViewById(R.id.membersListView);
         membersList.setAdapter(adapter);
 
 

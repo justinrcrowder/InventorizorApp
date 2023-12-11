@@ -40,24 +40,26 @@ public class AddEditMemberProfile extends AppCompatActivity {
             String memberName = memberNameInput.getText().toString().trim();
             String memberPosition = memberPositionInput.getText().toString().trim();
             String memberNumber = memberNumberInput.getText().toString().trim();
+            Log.i("INFO", "Name: " + memberName + " Position: " + memberPosition + " Number: " + memberNumber);
             if (memberName.length() > 0 && memberPosition.length() > 0) {
                 MemberProfile newMember = new MemberProfile(memberName, memberPosition, memberNumber);
                 members.add(newMember);
                 restaurantManager.setMembers(members);
-                goToRestaurantProfile(view);
+                Log.i("INFO", members.toString());
+                goToRestaurantProfile();
             }
         });
 
-        findViewById(R.id.backButton).setOnClickListener(view -> {
+        findViewById(R.id.backButton).setOnClickListener(v -> {
             goBackToRestaurantProfile();
         });
 
 
     }
 
-    public void goToRestaurantProfile(View view) {
+    public void goToRestaurantProfile() {
         Intent intent = new Intent(this, restaurant_profile.class);
-        startActivity(intent); // finish()?
+        startActivity(intent);
     }
 
     public void goBackToRestaurantProfile() {

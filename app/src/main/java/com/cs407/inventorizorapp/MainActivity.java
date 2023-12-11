@@ -31,13 +31,6 @@ public class MainActivity extends AppCompatActivity {
         RestaurantManager restaurantManager = RestaurantManager.getInstance();
         ingredients = restaurantManager.getIngredients();
 
-//        uncomment if switching back to database
-//        load ingredients from the database and prepare them as strings
-//        Context context = getApplicationContext();
-//        SQLiteDatabase sqLiteDatabase = context.openOrCreateDatabase("restaurant", Context.MODE_PRIVATE, null);
-//        dbHelper = new DBHelper(sqLiteDatabase);
-//        ingredients = dbHelper.readIngredients();
-
         if (ingredients != null && ingredients.size() > 0) {
             findViewById(R.id.emptyMessage).setVisibility(View.GONE);
             displayIngredients = new ArrayList<>();

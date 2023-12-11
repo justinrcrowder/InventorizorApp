@@ -14,34 +14,41 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
 
-public class addEditIngredientActivity extends AppCompatActivity {
-    Button saveIngredientButton;
-    public static ArrayList<Ingredient> ingredients;
+public class addIngredientActivity extends AppCompatActivity {
+    private Button saveIngredientButton;
+    private TextInputEditText ingredientNameEditText;
+    private TextView amountOwnedText;
+    private TextView targetAmountText;
+    private ImageButton incrAmountOwnedButton;
+    private ImageButton decrAmountOwnedButton;
+    private ImageButton incrTargetAmountButton;
+    private ImageButton decrTargetAmountButton;
     private String ingredientName;
     private int amountOwned;
     private int targetAmount;
+    private ArrayList<Ingredient> ingredients;
 
-
-//    uncomment if switching back to database
-//    DBHelper dbHelper;
+    // Use the RestaurantManager to manage ingredients
+    private RestaurantManager restaurantManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_edit_ingredient);
-        ingredients = new ArrayList<>();
+        setContentView(R.layout.activity_add_ingredient);
 
-//        fill ingredients from intent if exists
-        if (getIntent() != null) {
-            Log.i("INFO", "There are existing ingredients!");
-            ingredients = (ArrayList<Ingredient>) getIntent().getSerializableExtra("Ingredient_list");
-        } else {
-            Log.i("INFO", "No ingredients were passed over...");
-        }
+        // Initialize the RestaurantManager instance
+        restaurantManager = RestaurantManager.getInstance();
 
-        TextInputEditText ingredientNameEditText = findViewById(R.id.ingredientNameEditText);
-        TextView amountOwnedText = findViewById(R.id.amountOwnedText);
-        TextView targetAmountText = findViewById(R.id.targetAmountText);
+        // Get ingredients from RestaurantManager
+        ingredients = restaurantManager.getIngredients();
+
+        ingredientNameEditText = findViewById(R.id.ingredientNameEditText);
+        amountOwnedText = findViewById(R.id.amountOwnedText);
+        targetAmountText = findViewById(R.id.targetAmountText);
+        incrAmountOwnedButton = findViewById(R.id.incrAmountOwned);
+        decrAmountOwnedButton = findViewById(R.id.decrAmountOwned);
+        incrTargetAmountButton = findViewById(R.id.incrTargetAmount);
+        decrTargetAmountButton = findViewById(R.id.decrTargetAmount);
 
         ingredientName = "";
         amountOwned = 5;
@@ -50,11 +57,6 @@ public class addEditIngredientActivity extends AppCompatActivity {
         ingredientNameEditText.setText(ingredientName);
         amountOwnedText.setText(String.valueOf(amountOwned));
         targetAmountText.setText(String.valueOf(targetAmount));
-
-        ImageButton incrAmountOwnedButton = findViewById(R.id.incrAmountOwned);
-        ImageButton decrAmountOwnedButton = findViewById(R.id.decrAmountOwned);
-        ImageButton incrTargetAmountButton = findViewById(R.id.incrTargetAmount);
-        ImageButton decrTargetAmountButton = findViewById(R.id.decrTargetAmount);
 
         incrAmountOwnedButton.setOnClickListener(v -> {
             amountOwned++;
@@ -79,13 +81,6 @@ public class addEditIngredientActivity extends AppCompatActivity {
                 targetAmountText.setText(String.valueOf(targetAmount));
             }
         });
-
-
-//        uncomment code if switching back to database
-//        Context context = getApplicationContext();
-//        SQLiteDatabase sqLiteDatabase = context.openOrCreateDatabase("restaurant", Context.MODE_PRIVATE, null);
-//        dbHelper = new DBHelper(sqLiteDatabase);
-//        ingredients = dbHelper.readIngredients();
 
         saveIngredientButton = findViewById(R.id.saveIngredientButton);
         saveIngredientButton.setOnClickListener(view -> {
@@ -114,6 +109,9 @@ public class addEditIngredientActivity extends AppCompatActivity {
                 Log.i("INFO", "New ingredient added: " + newIngredient.getIngredientName());
             }
 
+            // Update the ingredients in RestaurantManager
+            restaurantManager.setIngredients(ingredients);
+
             goToMainActivity();
         });
     }
@@ -122,9 +120,8 @@ public class addEditIngredientActivity extends AppCompatActivity {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
-    public void goToMainActivity() {
+    private void goToMainActivity() {
         Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("Ingredient_list", ingredients);
         startActivity(intent);
     }
 }

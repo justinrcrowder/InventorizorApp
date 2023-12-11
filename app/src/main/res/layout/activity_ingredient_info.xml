@@ -103,13 +103,13 @@
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/addeditdonebutton"
+            android:id="@+id/editButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:text="Edit"
             android:background="@drawable/smallersalmonroundedcorners"
-            android:onClick="goToAddEditIngredient"/>
+            android:onClick="goToAddIngredient"/>
 
         <!-- Change this button to a back arrow -->
         <androidx.appcompat.widget.AppCompatButton

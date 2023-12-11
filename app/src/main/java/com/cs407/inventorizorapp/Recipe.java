@@ -1,8 +1,9 @@
 package com.cs407.inventorizorapp;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Recipe {
+public class Recipe implements Serializable {
     private String recipeName;
     private String recipeInstructions;
     private ArrayList<String> recipeIngredients;

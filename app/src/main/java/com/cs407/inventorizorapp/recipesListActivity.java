@@ -36,7 +36,11 @@ public class recipesListActivity extends AppCompatActivity {
             ListView recipesList = findViewById(R.id.recipesListView);
             recipesList.setAdapter(adapter);
 
-            // Need to add button to go to Recipe Info Page
+            // If recipe clicked on, take user to recipe info page
+            recipesList.setOnItemClickListener((adapterView, view, recipeIndex, l) -> {
+                Recipe selectedRecipe = recipes.get(recipeIndex);
+                goToRecipeInfo(selectedRecipe, recipeIndex);
+            });
         }
     }
 
@@ -47,6 +51,13 @@ public class recipesListActivity extends AppCompatActivity {
 
     public void goToRestaurantProfile(View view) {
         Intent intent = new Intent(this, restaurant_profile.class);
+        startActivity(intent);
+    }
+
+    public void goToRecipeInfo(Recipe selectedRecipe, int index) {
+        Intent intent = new Intent(getApplicationContext(), recipeInfoActivity.class);
+        intent.putExtra("SelectedRecipe", selectedRecipe);
+        intent.putExtra("RecipeIndex", index);
         startActivity(intent);
     }
 }

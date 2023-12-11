@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -13,6 +14,8 @@ public class recipeInfoActivity extends AppCompatActivity {
     private int recipeIndex;
     private ArrayList<Recipe> recipes;
     private RestaurantManager restaurantManager;
+    private Button backButton;
+    private Button editButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,15 +39,25 @@ public class recipeInfoActivity extends AppCompatActivity {
         TextView recipeInstructionsText = findViewById(R.id.instructionsField);
         recipeNameText.setText(recipeName);
         recipeInstructionsText.setText(recipeInstructions);
+
+        backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(view -> {
+            goToRecipeList();
+        });
+
+        editButton = findViewById(R.id.editRecipeButton);
+        editButton.setOnClickListener(view -> {
+            goToAddEditRecipe();
+        });
+    }
+
+    private void goToRecipeList() {
+        Intent intent = new Intent(this, recipesListActivity.class);
+        startActivity(intent);
     }
 
     public void goToAddEditRecipe() {
         Intent intent = new Intent(this, addRecipeActivity.class);
-        startActivity(intent);
-    }
-
-    public void goToMainActivity() {
-        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

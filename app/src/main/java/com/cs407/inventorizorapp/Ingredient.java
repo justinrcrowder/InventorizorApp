@@ -8,6 +8,12 @@ public class Ingredient implements Serializable {
     private int amountOwned;
     private int targetAmount;
 
+    public Ingredient(String ingredientName, int amountOwned, int targetAmount) {
+        this.ingredientName = ingredientName;
+        this.amountOwned = amountOwned;
+        this.targetAmount = targetAmount;
+    }
+
     public void setIngredientName(String ingredientName) {
         this.ingredientName = ingredientName;
     }
@@ -17,12 +23,6 @@ public class Ingredient implements Serializable {
     }
 
     public void setTargetAmount(int targetAmount) {
-        this.targetAmount = targetAmount;
-    }
-
-    public Ingredient(String ingredientName, int amountOwned, int targetAmount) {
-        this.ingredientName = ingredientName;
-        this.amountOwned = amountOwned;
         this.targetAmount = targetAmount;
     }
 

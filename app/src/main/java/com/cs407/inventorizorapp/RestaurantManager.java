@@ -20,11 +20,10 @@ public class RestaurantManager {
         }
         return instance;
     }
-
-    public ArrayList<Recipe> getRecipes() {
-        return recipes;
+    public ArrayList<Recipe> getRecipes() { return recipes; }
+    public void addRecipe(Recipe recipe) {
+        recipes.add(recipe);
     }
-
     public void setRecipes(ArrayList<Recipe> recipes) {
         this.recipes = recipes;
     }

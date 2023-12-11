@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".recipe_information">
+    tools:context=".recipeInfoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -58,31 +58,22 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="75dp">
+            android:layout_height="wrap_content">
 
-            <LinearLayout
+            <ListView
+                android:id="@+id/recipesListView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/ingredientValue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="35dp"
-                    android:background="@drawable/grayrounded"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:text="Ingredient 1" />
-            </LinearLayout>
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/grayrounded"/>
         </ScrollView>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_gravity="center_horizontal">
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp">
 
             <TextView
                 android:id="@+id/instructions"

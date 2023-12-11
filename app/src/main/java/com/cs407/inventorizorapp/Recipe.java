@@ -1,13 +1,15 @@
 package com.cs407.inventorizorapp;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Recipe {
+public class Recipe implements Serializable {
     private String recipeName;
     private String recipeInstructions;
-    private ArrayList<Ingredient> recipeIngredients;
+    private ArrayList<String> recipeIngredients;
 
-    public Recipe(String recipeName, String recipeInstructions, ArrayList<Ingredient> recipeIngredients) {
+    public Recipe() {}
+    public Recipe(String recipeName, String recipeInstructions, ArrayList<String> recipeIngredients) {
         this.recipeName = recipeName;
         this.recipeInstructions = recipeInstructions;
         this.recipeIngredients = recipeIngredients;
@@ -19,7 +21,7 @@ public class Recipe {
     public String getRecipeInstructions() {
         return recipeInstructions;
     }
-    public ArrayList<Ingredient> getRecipeIngredients() {
+    public ArrayList<String> getRecipeIngredients() {
         return recipeIngredients;
     }
 }

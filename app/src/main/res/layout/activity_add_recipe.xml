@@ -4,124 +4,109 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".addRecipe">
+    tools:context=".addRecipeActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="#FFF0BE"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="299dp"
+        <EditText
+            android:id="@+id/recipeNameEditText"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="80dp"
-            android:background="@drawable/biggersalmonroundedcorners"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/smallersalmonroundedcorners"
+            android:hint="Enter Recipe Name"
             android:paddingLeft="50dp"
             android:paddingTop="4dp"
             android:paddingRight="50dp"
-            android:paddingBottom="4dp">
+            android:paddingBottom="4dp"
+            android:textAlignment="center"
+            android:textSize="30dp" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/recipeNameEditText"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="Enter Recipe Name:" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/inputView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="50dp"
-        android:background="@drawable/biggersalmonroundedcorners"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/buttonView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/addingredients"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="15dp"
-            android:text="Add Ingredients:"
-            android:textSize="20dp" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/addingredientbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <LinearLayout
+            android:id="@+id/mainContentView"
+            android:layout_width="350dp"
+            android:layout_height="500dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="35dp"
-            android:background="@drawable/grayrounded"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:text="Add Ingredient Name" />
+            android:layout_marginTop="20dp"
+            android:background="@drawable/biggersalmonroundedcorners"
+            android:gravity="center|center_horizontal"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/addinstructions"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="90dp"
-            android:text="Add Instructions:"
-            android:textSize="20dp" />
+            <TextView
+                android:id="@+id/addingredients"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:text="Add Ingredients:"
+                android:textSize="20dp" />
 
-        <EditText
-            android:id="@+id/addintructionsfield"
-            android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/addingredientedittext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="35dp"
+                android:background="@drawable/grayrounded"
+                android:hint="Add Ingredients, comma-separated"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
+
+            <TextView
+                android:id="@+id/addinstructions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="90dp"
+                android:text="Add Instructions:"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/addintructionsfield"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/grayrounded"
+                android:hint="Add recipe instructions here..."
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="200dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buttonsView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/grayrounded"
-            android:hint="Add recipe instructions here..."
-            android:inputType="text"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="200dp" />
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/saveRecipeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:background="@drawable/smallersalmonroundedcorners"
+                android:onClick="goToRestaurantProfile"
+                android:text="Save" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="190dp"
+                android:background="@drawable/baseline_arrow_back_24"
+                android:onClick="goToRestaurantProfile" />
+
+        </LinearLayout>
+
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/buttonView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="33dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputView">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/doneButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:background="@drawable/smallersalmonroundedcorners"
-            android:onClick="goToRestaurantProfile"
-            android:text="Done" />
-
-        <!-- Change this button to a back arrow -->
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/backButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="190dp"
-            android:background="@drawable/baseline_arrow_back_24"
-            android:onClick="goToRestaurantProfile" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

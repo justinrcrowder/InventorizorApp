@@ -11,7 +11,7 @@ public class addeditrecipe extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addeditrecipe);
+        setContentView(R.layout.activity_add_recipe);
     }
 
     public void goToRestaurantProfile(View view) {

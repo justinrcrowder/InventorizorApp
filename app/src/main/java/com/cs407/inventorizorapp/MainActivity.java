@@ -17,11 +17,15 @@ public class MainActivity extends AppCompatActivity {
     public static ArrayList<String> displayIngredients;
     ArrayAdapter adapter;
     Button addIngredientButton;
+    Button restaurantProfileButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        restaurantProfileButton = findViewById(R.id.profileView);
+        restaurantProfileButton.setOnClickListener(view -> goToRestaurantProfile());
 
         // Use RestaurantManager to get ingredients
         RestaurantManager restaurantManager = RestaurantManager.getInstance();
@@ -74,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goToRestaurantProfile(View view) {
+    public void goToRestaurantProfile() {
         Intent intent = new Intent(this, restaurant_profile.class);
         startActivity(intent);
     }

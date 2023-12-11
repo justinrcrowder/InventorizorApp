@@ -17,20 +17,24 @@
         android:background="#FFF0BE"
         >
 
-        <TextView
-            android:id="@+id/enterrecipename"
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="299dp"
             android:layout_height="wrap_content"
-            android:text="Enter Recipe Name"
-            android:textAlignment="center"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="80dp"
-            android:textSize="30dp"
+            android:layout_margin="80dp"
+            android:background="@drawable/biggersalmonroundedcorners"
             android:paddingLeft="50dp"
-            android:paddingRight="50dp"
             android:paddingTop="4dp"
-            android:paddingBottom="4dp"
-            android:background="@drawable/smallersalmonroundedcorners"/>
+            android:paddingRight="50dp"
+            android:paddingBottom="4dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/recipeNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Enter Recipe Name:" />
+        </com.google.android.material.textfield.TextInputLayout>
+
     </LinearLayout>
 
     <LinearLayout

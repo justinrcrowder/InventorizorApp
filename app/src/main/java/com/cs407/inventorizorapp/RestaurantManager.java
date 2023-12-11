@@ -7,11 +7,14 @@ public class RestaurantManager {
     private ArrayList<Ingredient> ingredients;
     private ArrayList<Recipe> recipes;
     private ArrayList<MemberProfile> members;
+    private String restaurantName;
 
     private RestaurantManager() {
         // Private constructor to prevent instantiation
         ingredients = new ArrayList<>();
         recipes = new ArrayList<>();
+        members = new ArrayList<>();
+        restaurantName = "";
     }
 
     public static synchronized RestaurantManager getInstance() {
@@ -20,6 +23,15 @@ public class RestaurantManager {
         }
         return instance;
     }
+
+    public String getRestaurantName() {
+        return restaurantName;
+    }
+
+    public void setRestaurantName(String restaurantName) {
+        this.restaurantName = restaurantName;
+    }
+
     public ArrayList<Recipe> getRecipes() { return recipes; }
     public void addRecipe(Recipe recipe) {
         recipes.add(recipe);

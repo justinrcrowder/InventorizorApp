@@ -104,7 +104,7 @@
         android:id="@+id/buttonsView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="665dp"
+        android:layout_marginTop="785dp"
         android:orientation="horizontal"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

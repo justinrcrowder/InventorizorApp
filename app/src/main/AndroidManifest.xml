@@ -25,6 +25,9 @@
             android:name=".editIngredientActivity"
             android:exported="false" />
         <activity
+            android:name=".EditMemberProfile"
+            android:exported="false" />
+        <activity
             android:name=".recipesListActivity"
             android:exported="false" />
         <activity

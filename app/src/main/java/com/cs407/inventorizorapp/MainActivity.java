@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     public static ArrayList<String> displayIngredients;
     ArrayAdapter adapter;
     Button addIngredientButton;
+    Button addRecipeButton;
     Button restaurantProfileButton;
 
     private final ActivityResultLauncher<String> requestPermissionLauncher = registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
@@ -78,6 +79,11 @@ public class MainActivity extends AppCompatActivity {
             findViewById(R.id.emptyMessage).setVisibility(View.VISIBLE);
         }
 
+        addRecipeButton = findViewById(R.id.addRecipeButton);
+        addRecipeButton.setOnClickListener(view -> {
+            goToAddRecipe();
+        });
+
         addIngredientButton = findViewById(R.id.addIngredientButton);
         addIngredientButton.setOnClickListener(view -> {
             goToAddIngredient();
@@ -94,6 +100,11 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("SelectedIngredient", selectedIngredient);
         intent.putExtra("IngredientIndex", index);
         Log.i("INFO", index + " " + selectedIngredient.getIngredientName());
+        startActivity(intent);
+    }
+
+    public void goToAddRecipe() {
+        Intent intent = new Intent(this, addRecipeActivity.class);
         startActivity(intent);
     }
 

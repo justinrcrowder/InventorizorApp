@@ -26,6 +26,7 @@ public class recipesListActivity extends AppCompatActivity {
         recipes = restaurantManager.getRecipes();
 
         if (recipes != null && recipes.size() > 0) {
+            findViewById(R.id.emptyMessage).setVisibility(View.GONE);
             displayRecipes = new ArrayList<>();
             for (Recipe recipe : recipes) {
                 displayRecipes.add(recipe.getRecipeName());
@@ -41,6 +42,9 @@ public class recipesListActivity extends AppCompatActivity {
                 Recipe selectedRecipe = recipes.get(recipeIndex);
                 goToRecipeInfo(selectedRecipe, recipeIndex);
             });
+        } else {
+            findViewById(R.id.recipesListView).setVisibility(View.GONE);
+            findViewById(R.id.emptyMessage).setVisibility(View.VISIBLE);
         }
     }
 

@@ -28,6 +28,7 @@ public class EditMemberProfile extends AppCompatActivity {
     private Button backButton;
 
     private int memberIndex;
+    private RestaurantManager restaurantManager;
 
 
     @Override
@@ -35,7 +36,7 @@ public class EditMemberProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_edit_member_profile);
 
-        RestaurantManager restaurantManager = RestaurantManager.getInstance();
+        restaurantManager = RestaurantManager.getInstance();
 
         // Get members from RestaurantManager
         ArrayList<MemberProfile> members = restaurantManager.getMembers();

@@ -65,7 +65,7 @@ public class restaurant_profile extends AppCompatActivity {
     }
 
     public void goToEditMemberInfo(MemberProfile member, int index) {
-        Intent intent = new Intent(getApplicationContext(), AddEditMemberProfile.class);
+        Intent intent = new Intent(getApplicationContext(), EditMemberProfile.class);
         intent.putExtra("SelectedMember", member);
         intent.putExtra("memberIndex", index);
         Log.i("INFO", index + " " + member.getMemberName());

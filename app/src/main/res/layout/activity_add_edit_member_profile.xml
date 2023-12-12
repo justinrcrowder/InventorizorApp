@@ -19,39 +19,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:id="@+id/linearLayoutAddImage"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginHorizontal="15dp"
-            android:layout_marginVertical="15dp"
-            android:background="@drawable/grayrounded"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginVertical="10dp"
-                android:layout_weight="1"
-                android:paddingHorizontal="60dp"
-                android:paddingVertical="10dp"
-                android:scaleType="fitXY"
-                android:src="@android:drawable/ic_menu_add" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight=".5"
-                android:gravity="center"
-                android:text="Click to insert image"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
             android:id="@+id/linearLayoutAddMember"
             android:layout_width="match_parent"
             android:layout_height="100dp"

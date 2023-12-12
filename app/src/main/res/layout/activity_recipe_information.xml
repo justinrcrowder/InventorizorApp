@@ -81,14 +81,13 @@
                 android:text="Instructions:"
                 android:textSize="20dp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/instructionsField"
-                android:layout_width="wrap_content"
-                android:layout_height="167dp"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/grayrounded"
-                android:hint="Add recipe instructions here..."
                 android:inputType="text"
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"

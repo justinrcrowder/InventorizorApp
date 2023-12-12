@@ -50,7 +50,7 @@ public class recipeInfoActivity extends AppCompatActivity {
         ingredientsListView.setAdapter(adapter);
         String recipeInstructions = selectedRecipe.getRecipeInstructions();
 
-        // Show recipe info (Need to add the ingredients list)
+        // Show recipe info
         TextView recipeNameText = findViewById(R.id.recipeName);
         TextView recipeInstructionsText = findViewById(R.id.instructionsField);
         recipeNameText.setText(recipeName);

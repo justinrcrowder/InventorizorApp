@@ -71,6 +71,20 @@
             android:scaleType="fitXY"
             app:srcCompat="@android:drawable/ic_menu_add" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/addRecipeButton"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/grayrounded"
+            android:text="Add Recipe"
+            android:paddingHorizontal="10dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@android:drawable/ic_menu_add" />
+
+
         <Space
             android:layout_width="0dp"
             android:layout_weight="1"

@@ -108,7 +108,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="190dp"
                 android:background="@drawable/baseline_arrow_back_24"
-                android:onClick="goToRestaurantProfile" />
+                android:onClick="goToRecipesList" />
 
         </LinearLayout>
 

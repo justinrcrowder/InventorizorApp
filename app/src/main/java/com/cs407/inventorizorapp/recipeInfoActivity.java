@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -42,7 +43,7 @@ public class recipeInfoActivity extends AppCompatActivity {
 
         backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(view -> {
-            goToRecipeList();
+            goToRecipeList(view);
         });
 
         editButton = findViewById(R.id.editRecipeButton);
@@ -51,7 +52,7 @@ public class recipeInfoActivity extends AppCompatActivity {
         });
     }
 
-    private void goToRecipeList() {
+    private void goToRecipeList(View view) {
         Intent intent = new Intent(this, recipesListActivity.class);
         startActivity(intent);
     }

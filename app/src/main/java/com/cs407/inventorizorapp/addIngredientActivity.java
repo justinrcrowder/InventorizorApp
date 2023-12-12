@@ -98,7 +98,7 @@ public class addIngredientActivity extends AppCompatActivity {
                 return;
             }
 
-            Ingredient newIngredient = new Ingredient(ingredientName, targetAmount, amountOwned);
+            Ingredient newIngredient = new Ingredient(ingredientName, amountOwned, targetAmount);
 
             if (ingredients != null) {
                 ingredients.add(newIngredient);
@@ -111,7 +111,6 @@ public class addIngredientActivity extends AppCompatActivity {
 
             // Update the ingredients in RestaurantManager
             restaurantManager.setIngredients(ingredients);
-
             goToMainActivity();
         });
     }

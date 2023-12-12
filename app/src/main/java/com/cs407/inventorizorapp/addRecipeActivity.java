@@ -71,6 +71,11 @@ public class addRecipeActivity extends AppCompatActivity {
             // Add recipe to restaurant manager class
             restaurantManager.addRecipe(recipe);
 
+            // give push notification that new recipe has been added
+            NotificationHelper.getInstance().setNotificationContext("New Recipe Added", recipeName + " has been added to your recipes list");
+            NotificationHelper.getInstance().showNotification(getApplicationContext());
+
+
             goToRecipesList(view);
         });
     }

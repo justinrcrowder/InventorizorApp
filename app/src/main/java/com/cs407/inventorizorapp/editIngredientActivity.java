@@ -103,6 +103,12 @@ public class editIngredientActivity extends AppCompatActivity {
             // Update the ingredients in RestaurantManager
             restaurantManager.setIngredients(ingredients);
 
+            // if amount owned is less than target amount, send notification
+            if (amountOwned < targetAmount) {
+                NotificationHelper.getInstance().setNotificationContext("Ingredient " + ingredientName + " is low", "You have " + amountOwned + " " + ingredientName + " left. You need " + (targetAmount - amountOwned) + " more.");
+                NotificationHelper.getInstance().showNotification(getApplicationContext());
+            }
+
             goToMainActivity();
         });
     }

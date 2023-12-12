@@ -17,6 +17,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/welcomeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/biggersalmonroundedcorners"
+            android:paddingVertical="10dp"
+            android:text="Welcome to Inventorizor!\nAdd your restaurant information to get started!"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
@@ -57,7 +70,7 @@
                     android:id="@+id/memberName"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:hint="Enter member name:"
+                    android:hint="Enter Your Name:"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -72,7 +85,7 @@
                     android:id="@+id/memberPosition"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:hint="Enter member position"
+                    android:hint="Enter Your Position:"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -87,7 +100,7 @@
                     android:id="@+id/memberNumber"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:hint="Enter member phone number"
+                    android:hint="Enter Your Phone Number:"
                     android:textSize="20sp"
                     android:textStyle="bold" />
             </com.google.android.material.textfield.TextInputLayout>

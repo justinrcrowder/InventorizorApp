@@ -23,10 +23,6 @@ public class EditMemberProfile extends AppCompatActivity {
     private String memberName;
     private String memberPosition;
     private String memberPhone;
-    private ArrayList<MemberProfile> members;
-    private Button confirmButton;
-    private Button backButton;
-
     private int memberIndex;
     private RestaurantManager restaurantManager;
 
@@ -62,6 +58,9 @@ public class EditMemberProfile extends AppCompatActivity {
             Log.i("INFO", "Save button pressed");
 
             memberName = memberNameEditText.getText().toString().trim();
+            memberPosition = memberPositionEditText.getText().toString().trim();
+            memberPhone = memberPhoneEditText.getText().toString().trim();
+
 
             if (memberName.isEmpty()) {
                 showToast("Ingredient name cannot be blank");
@@ -78,6 +77,11 @@ public class EditMemberProfile extends AppCompatActivity {
             restaurantManager.setMembers(members);
 
             goToRestaurantProfile();
+        });
+
+        Button backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(view -> {
+            goBackToRestaurantProfile();
         });
     }
 

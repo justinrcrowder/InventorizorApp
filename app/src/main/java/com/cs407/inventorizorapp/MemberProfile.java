@@ -1,6 +1,8 @@
 package com.cs407.inventorizorapp;
 
-public class MemberProfile {
+import java.io.Serializable;
+
+public class MemberProfile implements Serializable{
     private String memberName;
     private String memberPosition;
     private String memberPhone;
@@ -21,6 +23,15 @@ public class MemberProfile {
 
     public String getMemberPhone() {
         return memberPhone;
+    }
+    public void setMemberName(String name) {
+        this.memberName = name;
+    }
+    public void setMemberPosition(String position) {
+        this.memberPosition = position;
+    }
+    public void setMemberPhone(String phone) {
+        this.memberPhone = phone;
     }
 
     @Override

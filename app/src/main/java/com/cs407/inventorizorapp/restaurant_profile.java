@@ -40,6 +40,11 @@ public class restaurant_profile extends AppCompatActivity {
         ListView membersList = findViewById(R.id.membersListView);
         membersList.setAdapter(adapter);
 
+        membersList.setOnItemClickListener((adapterView, view, memberIndex, l) -> {
+            MemberProfile selectedMember = members.get(memberIndex);
+            goToEditMemberInfo(selectedMember, memberIndex);
+        });
+
 
     }
 
@@ -54,8 +59,16 @@ public class restaurant_profile extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goToAddEditMemberProfile(View view) {
+    public void goToAddMemberProfile(View view) {
         Intent intent = new Intent(this, AddEditMemberProfile.class);
+        startActivity(intent);
+    }
+
+    public void goToEditMemberInfo(MemberProfile member, int index) {
+        Intent intent = new Intent(getApplicationContext(), AddEditMemberProfile.class);
+        intent.putExtra("SelectedMember", member);
+        intent.putExtra("memberIndex", index);
+        Log.i("INFO", index + " " + member.getMemberName());
         startActivity(intent);
     }
 

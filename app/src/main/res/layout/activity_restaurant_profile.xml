@@ -76,8 +76,8 @@
             android:layout_margin="20dp"
             android:layout_weight="1"
             android:background="@drawable/grayrounded"
-            android:divider="@android:color/transparent"
-            android:dividerHeight="10dp"></ListView>
+            android:divider="@android:color/darker_gray"
+            android:dividerHeight="2dp"></ListView>
 
         <!-- Recipes Info Button -->
 
@@ -92,14 +92,17 @@
         android:text="Recipe List"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/memberLinLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/memberLinLayout"
+        />
 
     <LinearLayout
         android:id="@+id/buttonsView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/recipeListButton">
+        app:layout_constraintTop_toBottomOf="@id/recipeListButton"
+        tools:layout_editor_absoluteX="10dp">
 
         <!-- Edit Button -->
         <androidx.appcompat.widget.AppCompatButton
@@ -108,7 +111,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:background="@drawable/smallersalmonroundedcorners"
-            android:onClick="goToAddEditMemberProfile"
+            android:onClick="goToAddMemberProfile"
             android:text="Edit" />
 
         <!-- Back Arrow -->

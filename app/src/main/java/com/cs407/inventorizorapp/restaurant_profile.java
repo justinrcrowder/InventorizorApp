@@ -3,6 +3,7 @@ package com.cs407.inventorizorapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -42,10 +43,15 @@ public class restaurant_profile extends AppCompatActivity {
 
         membersList.setOnItemClickListener((adapterView, view, memberIndex, l) -> {
             MemberProfile selectedMember = members.get(memberIndex);
-            goToEditMemberInfo(selectedMember, memberIndex);
+            Intent dialIntent = new Intent(Intent.ACTION_DIAL);
+            dialIntent.setData(Uri.parse("tel:" + selectedMember.getMemberPhone()));
+            startActivity(dialIntent);
         });
-
-
+        membersList.setOnItemLongClickListener((adapterView, view, memberIndex, l) -> {
+            MemberProfile selectedMember = members.get(memberIndex);
+            goToEditMemberInfo(selectedMember, memberIndex);
+            return true;
+        });
     }
 
     //Might end up needing two activities for Adding a recipe and Editing a recipe

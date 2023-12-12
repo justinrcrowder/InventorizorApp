@@ -41,6 +41,18 @@
             android:textAlignment="center"
             android:textSize="30dp" />
 
+        <!-- Hint for employees -->
+        <TextView
+            android:id="@+id/employeeHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal"
+            android:text="Tap employee to call and hold down to edit employee information!"
+            android:textSize="14dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -48,9 +60,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="275dp"
+        android:layout_marginTop="300dp"
         android:layout_marginRight="50dp"
-        android:layout_marginBottom="200dp"
+        android:layout_marginBottom="150dp"
         android:background="@drawable/biggersalmonroundedcorners"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -78,9 +90,6 @@
             android:background="@drawable/grayrounded"
             android:divider="@android:color/darker_gray"
             android:dividerHeight="2dp"></ListView>
-
-        <!-- Recipes Info Button -->
-
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -92,14 +101,13 @@
         android:text="Recipe List"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/memberLinLayout"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/memberLinLayout" />
 
     <LinearLayout
         android:id="@+id/buttonsView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="28dp"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/recipeListButton"
         tools:layout_editor_absoluteX="10dp">
@@ -112,7 +120,7 @@
             android:layout_marginLeft="25dp"
             android:background="@drawable/smallersalmonroundedcorners"
             android:onClick="goToAddMemberProfile"
-            android:text="Edit" />
+            android:text="Add" />
 
         <!-- Back Arrow -->
         <androidx.appcompat.widget.AppCompatButton

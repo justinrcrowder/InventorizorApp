@@ -10,13 +10,12 @@
         android:id="@+id/linearLayoutIngredientName"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#FFF0BE"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:background="#FFF0BE"
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/ingredientName"
@@ -30,9 +29,9 @@
             android:paddingRight="50dp"
             android:paddingBottom="4dp"
             android:text="Ingredient"
-            android:textStyle="bold"
             android:textAlignment="center"
-            android:textSize="30dp" />
+            android:textSize="30dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/ingredientThreshold"
@@ -40,19 +39,20 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
+            android:background="@drawable/grayrounded"
             android:paddingLeft="9dp"
             android:paddingTop="4dp"
             android:paddingRight="50dp"
             android:paddingBottom="4dp"
             android:text="Low amount threshold:"
             android:textAlignment="center"
-            android:textSize="18dp"
-            android:background="@drawable/grayrounded"/>
+            android:textSize="18dp" />
 
     </LinearLayout>
 
 
     <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="50dp"
@@ -101,14 +101,14 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/buttonsView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="665dp"
+        android:orientation="horizontal"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        android:layout_marginTop="665dp"
-        android:orientation="horizontal">
+        app:layout_constraintTop_toBottomOf="parent">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/editButton"
@@ -126,6 +126,6 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="190dp"
             android:background="@drawable/baseline_arrow_back_24"
-            android:onClick="goToMainActivity"/>
+            android:onClick="goToMainActivity" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
